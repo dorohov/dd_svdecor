@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Система</title>
+    <title>Svdecor</title>
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
-    <div class="__dd">
+    <div class="__dd" id="__dd-body">
+        <script>
+            var styles = {
+                dark: 'dist/css/style_dark.css',
+                white: 'dist/css/style_white.css'
+            }
+        </script>
         @@include('blocks/block1.html')
         @@include('blocks/block2.html')
-        @@include('blocks/block3.html')
-        @@include('blocks/block4.html')
-        @@include('blocks/block5.html')
-        @@include('blocks/block6.html')
-        @@include('blocks/block7.html')
-        @@include('blocks/block8.html')
     </div>
     <script src="dist/js/jquery-3.3.1.min.js"></script>
-    <script src="dist/js/bundle-min.js"></script>
+    <script src="dist/js/jquery.visible.min.js"></script>
+    <script src="dist/js/color.js"></script>
+    <script src="dist/js/main.js"></script>
 </body>
 </html>

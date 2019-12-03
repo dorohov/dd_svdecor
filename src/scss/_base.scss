@@ -1,4 +1,5 @@
 .__dd {
+    font-family: 'Futura PT';
     *,
     *::before,
     *::after {
@@ -23,5 +24,27 @@
     img {
         max-width: 100%;
         width: 100%;
+    }
+    &.is--dark {
+        .__dd__block-on__main__controls__switch label::after {
+            top: 6px;
+        }
+    }
+    &.is--white {
+        .__dd__block-on__main__controls__switch label::after {
+            top: 47px;
+        }
+    }
+    @media (max-width: 768px) {
+        &.is--dark {
+            .__dd__block-on__main__controls__switch label::after {
+                top: 4px;
+            }
+        }
+        &.is--white {
+            .__dd__block-on__main__controls__switch label::after {
+                top: 35px;
+            }
+        }
     }
 }
