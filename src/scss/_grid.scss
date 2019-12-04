@@ -103,4 +103,81 @@
             }
         }
     }
+    &__heading {
+        margin-bottom: 70px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        &__left {
+            @include col(color, var(--text), $text);
+            font-weight: 450;
+            font-size: 48px;
+        }
+        &__right {
+            @include col(color, var(--sub-text), $sub-text);
+            font-size: 18px;
+        }
+    }
+}
+
+
+@media (max-width: 1650px) {
+    .__dd-is {
+        &--rightline {
+            &::after {
+                right: 10.1vw;
+                width: 32.4vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .__dd-is {
+        &--rightline {
+            &::after {
+                right: 10.5vw;
+                width: 32vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .__dd-is {
+        &--rightline {
+            &::after {
+                right: 11vw;
+                width: 31.4vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .__dd-is {
+        &--rightline {
+            &::after {
+                content: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .__dd {
+        &__heading {
+            margin-bottom: 30px;
+            &__left {
+                font-size: 24px;
+            }
+            &__right {
+                display: none;
+            }
+        }
+        &__btn {
+            padding: 15px 20px;
+            border-width: 3px;
+        }
+    }
 }

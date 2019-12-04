@@ -51,5 +51,30 @@
             startAnimationBlocks()
         })
 
+        function setPaddings() {
+
+            var classes = {
+                paddingLeft: '.__dd__is--c-pl',
+                paddingRight: '.__dd__is--c-pr',
+                height100Per: '.__dd__is--h100'
+            }
+
+            var padding = document.getElementsByClassName('__dd__container')[0].getBoundingClientRect()
+
+            $(classes.paddingLeft).css({
+                paddingLeft: padding.left + 30
+            })
+            $(classes.paddingRight).css({
+                paddingRight: padding.left + 30
+            })
+
+        }
+
+        setPaddings()
+
+        $(window).resize(function() {
+            setPaddings()
+        })
+
     })
 })(jQuery);

@@ -29,10 +29,16 @@
         .__dd__block-on__main__controls__switch label::after {
             top: 6px;
         }
+        .__dd__block-ei__scroll span {
+            background-image: url(../../img/displays.dark.png);
+        }
     }
     &.is--white {
         .__dd__block-on__main__controls__switch label::after {
             top: 47px;
+        }
+        .__dd__block-ei__scroll span {
+            background-image: url(../../img/displays.white.png);
         }
     }
     @media (max-width: 768px) {
