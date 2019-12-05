@@ -43,8 +43,6 @@ function setColor(colorMode) {
         mainContainer.classList.add('is--dark')
     }
 
-    document.head.append(link);
-
     var imageBlocks = document.querySelectorAll('img.__dd-img-c')
 
     for(var i = 0; i < imageBlocks.length; i++) {
@@ -54,5 +52,7 @@ function setColor(colorMode) {
         imageBlocks[i].setAttribute('src', thisArr[0] + '.' + theme + '.' + thisArr[1])
 
     }
+
+    document.head.append(link);
 
 }

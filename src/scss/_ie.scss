@@ -1,3 +1,15 @@
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    
+    .__dd__block-on__main__controls__switch {
+        display: none;
+    }
+    .__dd__btn {
+        &::after,
+        &::before {
+            content: none;
+        }
+        &:hover {
+            border-color: $c-primary;
+            background: rgba($c-primary, .1);
+        }
+    }
 }

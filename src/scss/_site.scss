@@ -195,6 +195,7 @@
     &-fo {
         @include col(background, var(--b4-bg), $b4-bg);
         padding: 150px 0;
+        overflow: hidden;
         &__images {
             margin: 0 -30px;
             display: flex;
@@ -367,9 +368,6 @@
                 }
             }
         }
-        &-ni {
-            
-        }
     }
 }
 
@@ -429,6 +427,14 @@
                     span {
                         display: none;
                     }
+                }
+            }
+        }
+        &-ni {
+            &__left {
+                &__heading {
+                    font-size: 36px;
+                    margin-bottom: 30px;
                 }
             }
         }
@@ -565,6 +571,17 @@
             &__scroll {
                 span {
                     animation-duration: 150s;
+                }
+            }
+        }
+        &-ni {
+            padding: 50px 0;
+            &__right {
+                display: none;
+            }
+            &__left {
+                &__heading {
+                    font-size: 30px;
                 }
             }
         }

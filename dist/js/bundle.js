@@ -1,3 +1,63 @@
+!function(t){var i=t(window);t.fn.visible=function(t,e,o){if(!(this.length<1)){var r=this.length>1?this.eq(0):this,n=r.get(0),f=i.width(),h=i.height(),o=o?o:"both",l=e===!0?n.offsetWidth*n.offsetHeight:!0;if("function"==typeof n.getBoundingClientRect){var g=n.getBoundingClientRect(),u=g.top>=0&&g.top<h,s=g.bottom>0&&g.bottom<=h,c=g.left>=0&&g.left<f,a=g.right>0&&g.right<=f,v=t?u||s:u&&s,b=t?c||a:c&&a;if("both"===o)return l&&v&&b;if("vertical"===o)return l&&v;if("horizontal"===o)return l&&b}else{var d=i.scrollTop(),p=d+h,w=i.scrollLeft(),m=w+f,y=r.offset(),z=y.top,B=z+r.height(),C=y.left,R=C+r.width(),j=t===!0?B:z,q=t===!0?z:B,H=t===!0?R:C,L=t===!0?C:R;if("both"===o)return!!l&&p>=q&&j>=d&&m>=L&&H>=w;if("vertical"===o)return!!l&&p>=q&&j>=d;if("horizontal"===o)return!!l&&m>=L&&H>=w}}}}(jQuery);
+
+setColor()
+
+function changeColor() {
+
+    var currentColor = localStorage.getItem('dd-svdecor-color-scheme');
+
+    if(currentColor == 'white') setColor('dark')
+    else if(currentColor == 'dark') setColor('white')
+
+}
+
+function setColor(colorMode) {
+
+    var mainContainer = document.getElementById('__dd-body')
+
+    var elements = document.getElementsByClassName('dd-svdecor-color-scheme');
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+
+    var theme = colorMode || localStorage.getItem('dd-svdecor-color-scheme');
+
+    if(!theme || (theme != 'white' && theme != 'dark')) theme = 'dark';
+
+    localStorage.setItem('dd-svdecor-color-scheme', theme);
+
+    var link = document.createElement('link')
+    link.rel = 'stylesheet';
+    link.id = theme;
+    link.className = 'dd-svdecor-color-scheme';
+
+    var classList = mainContainer.classList;
+    classList.remove('is--white');
+    classList.remove('is--dark');
+
+    if(theme == 'white') {
+        link.href = styles.white;
+
+        mainContainer.classList.add('is--white')
+    }
+    else if (theme == 'dark') {
+        link.href = styles.dark;
+        mainContainer.classList.add('is--dark')
+    }
+
+    var imageBlocks = document.querySelectorAll('img.__dd-img-c')
+
+    for(var i = 0; i < imageBlocks.length; i++) {
+        var thisName = imageBlocks[i].getAttribute('src').replace('.dark', '').replace('.white', '')
+        var thisArr = thisName.split('.')
+
+        imageBlocks[i].setAttribute('src', thisArr[0] + '.' + theme + '.' + thisArr[1])
+
+    }
+
+    document.head.append(link);
+
+}
 (function($) {
     "use strict"
     $(function() {
